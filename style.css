@@ -1,3 +1,4 @@
+```css
 /* ==========================================================
    CONFIGURACIÓN GENERAL
 ========================================================== */
@@ -8,16 +9,12 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     min-height: 100vh;
-
     overflow-x: hidden;
 
     font-family:
@@ -26,11 +23,9 @@ body {
         serif;
 
     background: #fffdf3;
-
     color: #62531f;
 
-    transition:
-        background-color 1s ease;
+    transition: background-color 1s ease;
 }
 
 
@@ -39,17 +34,12 @@ body {
 ========================================================== */
 
 .background {
-
     position: fixed;
-
     inset: 0;
-
     z-index: -10;
-
     overflow: hidden;
 
     background:
-
         radial-gradient(
             circle at center,
             #fffef8 0%,
@@ -64,7 +54,6 @@ body {
 ========================================================== */
 
 .bg-rose {
-
     position: absolute;
 
     width: 190px;
@@ -73,48 +62,39 @@ body {
     border-radius: 50%;
 
     opacity: .42;
-
-    filter:
-        blur(1px);
+    filter: blur(1px);
 
     background:
-
         radial-gradient(
             circle at center,
             #b7770a 0 6%,
             transparent 7%
         ),
-
         radial-gradient(
             circle at 50% 30%,
             #ffe66b 0 21%,
             transparent 22%
         ),
-
         radial-gradient(
             circle at 72% 42%,
             #ffd43c 0 22%,
             transparent 23%
         ),
-
         radial-gradient(
             circle at 67% 70%,
             #f4c21e 0 21%,
             transparent 22%
         ),
-
         radial-gradient(
             circle at 38% 72%,
             #ffd94c 0 23%,
             transparent 24%
         ),
-
         radial-gradient(
             circle at 27% 45%,
             #ffe16a 0 22%,
             transparent 23%
         ),
-
         radial-gradient(
             circle,
             #ffdd51 0 38%,
@@ -128,7 +108,6 @@ body {
         ease-in-out
         infinite;
 }
-
 
 .bg-rose-1 {
     width: 320px;
@@ -192,11 +171,8 @@ body {
     bottom: 20%;
 }
 
-
 @keyframes backgroundFloat {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
 
@@ -207,11 +183,10 @@ body {
 
 
 /* ==========================================================
-   PÉTALOS FLOTANTES
+   PÉTALOS
 ========================================================== */
 
 .floating-petals span {
-
     position: fixed;
 
     top: -30px;
@@ -219,11 +194,9 @@ body {
     width: 13px;
     height: 21px;
 
-    border-radius:
-        80% 20% 80% 20%;
+    border-radius: 80% 20% 80% 20%;
 
     background: #f8cf32;
-
     opacity: .45;
 
     z-index: 2;
@@ -233,7 +206,6 @@ body {
         linear
         infinite;
 }
-
 
 .floating-petals span:nth-child(1) {
     left: 12%;
@@ -264,9 +236,7 @@ body {
     animation-delay: -8s;
 }
 
-
 @keyframes petalFall {
-
     0% {
         transform:
             translate(0, -30px)
@@ -292,27 +262,23 @@ body {
 ========================================================== */
 
 .intro {
-
-    height: 100vh;
+    min-height: 100svh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     position: relative;
+
+    padding: 30px 20px;
 }
 
-
 .intro-content {
-
     width: min(90%, 750px);
 
     text-align: center;
 
-    transform:
-        translateY(-25px);
+    transform: translateY(-25px);
 
     animation:
         introAppear
@@ -320,30 +286,25 @@ body {
         ease;
 }
 
-
 @keyframes introAppear {
-
     from {
         opacity: 0;
-        transform:
-            translateY(20px);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform:
-            translateY(-25px);
+        transform: translateY(-25px);
     }
 }
 
 
 /* ==========================================================
-   SVG
+   LIRIO INTRO
 ========================================================== */
 
 .intro-lily {
-
-    width: 190px;
+    width: clamp(125px, 22vw, 190px);
 
     margin:
         0 auto 20px;
@@ -355,9 +316,7 @@ body {
         infinite;
 }
 
-
 .intro-lily svg {
-
     width: 100%;
 
     overflow: visible;
@@ -369,11 +328,8 @@ body {
         );
 }
 
-
 @keyframes lilyFloat {
-
-    0%,
-    100% {
+    0%, 100% {
         transform:
             translateY(0)
             rotate(-1deg);
@@ -388,61 +344,47 @@ body {
 
 
 /* ==========================================================
-   ESTILO DE FLORES SVG
+   SVG
 ========================================================== */
 
 .svg-stem {
-
     fill: none;
-
     stroke: #547d2d;
-
     stroke-width: 8;
-
     stroke-linecap: round;
 }
 
-
 .svg-leaf {
-
     fill: #6d9637;
 }
 
-
 .lily-petal {
-
     fill: #ffd52c;
 }
 
-
 .lily-petal-light {
-
     fill: #ffe66d;
 }
 
-
 .lily-center {
-
     fill: #b9780c;
 }
 
 
 /* ==========================================================
-   TEXTO
+   TEXTO INTRO
 ========================================================== */
 
 .intro-text {
-
-    max-width: 700px;
+    width: min(100%, 700px);
 
     margin: auto;
 
-    padding:
-        0 20px;
+    padding: 0 10px;
 
     font-size:
         clamp(
-            1.4rem,
+            1.15rem,
             3vw,
             2.1rem
         );
@@ -460,7 +402,6 @@ body {
 ========================================================== */
 
 .scroll-indicator {
-
     width: 35px;
     height: 45px;
 
@@ -473,9 +414,7 @@ body {
         infinite;
 }
 
-
 .scroll-indicator span {
-
     display: block;
 
     width: 19px;
@@ -489,23 +428,17 @@ body {
     border-bottom:
         2px solid #bd9418;
 
-    transform:
-        rotate(45deg);
+    transform: rotate(45deg);
 }
 
-
 @keyframes arrowMove {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
+    0%, 100% {
+        transform: translateY(0);
         opacity: .45;
     }
 
     50% {
-        transform:
-            translateY(10px);
+        transform: translateY(10px);
         opacity: 1;
     }
 }
@@ -516,9 +449,7 @@ body {
 ========================================================== */
 
 .journey {
-
     height: 150vh;
-
     position: relative;
 }
 
@@ -528,14 +459,12 @@ body {
 ========================================================== */
 
 .falling-lily {
-
     position: fixed;
 
     left: 50%;
-
     top: 7vh;
 
-    width: 140px;
+    width: clamp(95px, 12vw, 140px);
 
     z-index: 100;
 
@@ -552,9 +481,7 @@ body {
         opacity;
 }
 
-
 .falling-lily svg {
-
     width: 100%;
 
     filter:
@@ -566,17 +493,14 @@ body {
 
 
 /* ==========================================================
-   SECCIÓN DEL RAMO
+   RAMO
 ========================================================== */
 
 .bouquet-section {
-
     min-height: 120vh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     position: relative;
@@ -590,20 +514,42 @@ body {
             rgba(255,247,200,.3),
             rgba(255,229,125,.72)
         );
+
+    overflow: hidden;
 }
 
+
+/* ==========================================================
+   CONTENEDOR RESPONSIVE DEL RAMO
+========================================================== */
 
 .bouquet-container {
 
-    width: 600px;
+    /*
+       El dibujo original sigue siendo de
+       600 x 700 px.
 
-    height: 700px;
+       CSS lo adapta automáticamente.
+    */
 
     position: relative;
 
-    transform:
-        translateY(20px);
+    width: min(600px, 92vw);
+
+    aspect-ratio: 600 / 700;
+
+    height: auto;
+
+    flex-shrink: 0;
+
+    transform: translateY(20px);
 }
+
+
+/*
+   Todo lo que estaba calculado en 600 x 700
+   conserva sus posiciones originales.
+*/
 
 
 /* ==========================================================
@@ -611,21 +557,15 @@ body {
 ========================================================== */
 
 .foliage {
-
     position: absolute;
-
     inset: 0;
-
     z-index: 2;
 }
 
-
 .branch {
-
     position: absolute;
 
     width: 180px;
-
     height: 300px;
 
     border-left:
@@ -635,13 +575,10 @@ body {
         bottom center;
 }
 
-
 .branch span {
-
     position: absolute;
 
     width: 65px;
-
     height: 25px;
 
     background:
@@ -654,7 +591,6 @@ body {
     border-radius:
         100% 0 100% 0;
 }
-
 
 .branch span:nth-child(1) {
     left: -45px;
@@ -679,7 +615,6 @@ body {
     top: 215px;
     transform: rotate(25deg);
 }
-
 
 .branch-1 {
     left: 150px;
@@ -708,29 +643,22 @@ body {
 
 
 /* ==========================================================
-   TALLOS PRINCIPALES
+   TALLOS
 ========================================================== */
 
 .bouquet-stems {
-
     position: absolute;
-
     inset: 0;
-
     z-index: 5;
 }
 
-
 .stem {
-
     position: absolute;
 
     bottom: 120px;
-
     left: 50%;
 
     width: 7px;
-
     height: 390px;
 
     border-radius: 20px;
@@ -747,60 +675,30 @@ body {
         bottom center;
 }
 
-
-.stem-1 {
-    transform: rotate(-32deg);
-}
-
-.stem-2 {
-    transform: rotate(-24deg);
-}
-
-.stem-3 {
-    transform: rotate(-15deg);
-}
-
-.stem-4 {
-    transform: rotate(-6deg);
-}
-
-.stem-5 {
-    transform: rotate(7deg);
-}
-
-.stem-6 {
-    transform: rotate(17deg);
-}
-
-.stem-7 {
-    transform: rotate(26deg);
-}
-
-.stem-8 {
-    transform: rotate(34deg);
-}
+.stem-1 { transform: rotate(-32deg); }
+.stem-2 { transform: rotate(-24deg); }
+.stem-3 { transform: rotate(-15deg); }
+.stem-4 { transform: rotate(-6deg); }
+.stem-5 { transform: rotate(7deg); }
+.stem-6 { transform: rotate(17deg); }
+.stem-7 { transform: rotate(26deg); }
+.stem-8 { transform: rotate(34deg); }
 
 
 /* ==========================================================
-   HOJAS GRANDES
+   HOJAS
 ========================================================== */
 
 .large-leaves {
-
     position: absolute;
-
     inset: 0;
-
     z-index: 7;
 }
 
-
 .large-leaf {
-
     position: absolute;
 
     width: 125px;
-
     height: 48px;
 
     border-radius:
@@ -818,7 +716,6 @@ body {
         0 -5px 8px
         rgba(30,70,20,.15);
 }
-
 
 .leaf-1 {
     left: 35px;
@@ -858,11 +755,10 @@ body {
 
 
 /* ==========================================================
-   ROSAS DEL RAMO
+   ROSAS
 ========================================================== */
 
 .rose {
-
     position: absolute;
 
     width: 110px;
@@ -873,43 +769,36 @@ body {
     z-index: 20;
 
     background:
-
         radial-gradient(
             circle at center,
             #a86d08 0 6%,
             transparent 7%
         ),
-
         radial-gradient(
             circle at 50% 31%,
             #ffe979 0 21%,
             transparent 22%
         ),
-
         radial-gradient(
             circle at 72% 43%,
             #ffd33c 0 22%,
             transparent 23%
         ),
-
         radial-gradient(
             circle at 65% 70%,
             #f2bd20 0 22%,
             transparent 23%
         ),
-
         radial-gradient(
             circle at 36% 70%,
             #ffd94c 0 22%,
             transparent 23%
         ),
-
         radial-gradient(
             circle at 27% 43%,
             #ffe36c 0 22%,
             transparent 23%
         ),
-
         radial-gradient(
             circle,
             #ffe36a 0 36%,
@@ -923,7 +812,6 @@ body {
             rgba(110,75,0,.18)
         );
 }
-
 
 .rose-1 {
     left: 55px;
@@ -953,7 +841,6 @@ body {
 ========================================================== */
 
 .peony {
-
     position: absolute;
 
     width: 115px;
@@ -964,38 +851,32 @@ body {
     z-index: 22;
 
     background:
-
         radial-gradient(
             circle at center,
             #d6a91c 0 7%,
             transparent 8%
         ),
-
         radial-gradient(
             ellipse at 50% 22%,
             #ffe994 0 25%,
             transparent 26%
         ),
-
         radial-gradient(
             ellipse at 74% 48%,
             #f9d56c 0 27%,
             transparent 28%
         ),
-
         radial-gradient(
             ellipse at 50% 77%,
             #ffdc79 0 27%,
             transparent 28%
         ),
-
         radial-gradient(
             ellipse at 26% 48%,
             #ffe58a 0 27%,
             transparent 28%
         );
 }
-
 
 .peony-1 {
     left: 135px;
@@ -1020,7 +901,6 @@ body {
 ========================================================== */
 
 .sunflower {
-
     position: absolute;
 
     width: 120px;
@@ -1043,9 +923,7 @@ body {
         );
 }
 
-
 .sunflower-center {
-
     position: absolute;
 
     width: 52px;
@@ -1064,7 +942,6 @@ body {
         );
 }
 
-
 .sunflower-1 {
     left: 95px;
     bottom: 465px;
@@ -1082,21 +959,17 @@ body {
 ========================================================== */
 
 .center-lily {
-
     position: absolute;
 
     width: 185px;
 
     left: 207px;
-
     bottom: 435px;
 
     z-index: 30;
 }
 
-
 .center-lily svg {
-
     width: 100%;
 
     filter:
@@ -1112,7 +985,6 @@ body {
 ========================================================== */
 
 .small-flower {
-
     position: absolute;
 
     width: 45px;
@@ -1123,38 +995,32 @@ body {
     z-index: 27;
 
     background:
-
         radial-gradient(
             circle,
             #e8ad16 0 17%,
             transparent 18%
         ),
-
         radial-gradient(
             circle at 50% 15%,
             #fff5d2 0 25%,
             transparent 26%
         ),
-
         radial-gradient(
             circle at 85% 50%,
             #fff0bd 0 25%,
             transparent 26%
         ),
-
         radial-gradient(
             circle at 50% 85%,
             #fff3c8 0 25%,
             transparent 26%
         ),
-
         radial-gradient(
             circle at 15% 50%,
             #fff4cf 0 25%,
             transparent 26%
         );
 }
-
 
 .sf-1 {
     left: 45px;
@@ -1184,15 +1050,12 @@ body {
 ========================================================== */
 
 .vase {
-
     position: absolute;
 
     width: 270px;
-
     height: 320px;
 
     left: 165px;
-
     bottom: 15px;
 
     z-index: 60;
@@ -1208,7 +1071,6 @@ body {
         rgba(255,255,255,.78);
 
     background:
-
         linear-gradient(
             90deg,
             rgba(255,255,255,.12),
@@ -1217,7 +1079,6 @@ body {
         );
 
     box-shadow:
-
         inset
         20px 0 35px
         rgba(255,255,255,.32),
@@ -1239,15 +1100,12 @@ body {
 ========================================================== */
 
 .vase-water {
-
     position: absolute;
 
     left: 5%;
-
     bottom: 0;
 
     width: 90%;
-
     height: 155px;
 
     border-radius:
@@ -1263,31 +1121,24 @@ body {
 
 
 /* ==========================================================
-   TALLOS VISIBLES DENTRO DEL VIDRIO
+   TALLOS DENTRO DEL FLORERO
 ========================================================== */
 
 .visible-stems {
-
     position: absolute;
-
     inset: 0;
 
     z-index: 8;
-
     opacity: .85;
 }
 
-
 .visible-stems span {
-
     position: absolute;
 
     bottom: 25px;
-
     left: 50%;
 
     width: 6px;
-
     height: 250px;
 
     border-radius: 10px;
@@ -1302,7 +1153,6 @@ body {
     transform-origin:
         bottom center;
 }
-
 
 .visible-stems span:nth-child(1) {
     transform: rotate(-24deg);
@@ -1330,19 +1180,16 @@ body {
 
 
 /* ==========================================================
-   REFLEJOS DEL CRISTAL
+   VIDRIO
 ========================================================== */
 
 .glass-shine {
-
     position: absolute;
 
     top: 35px;
-
     left: 25px;
 
     width: 27px;
-
     height: 235px;
 
     border-radius: 50%;
@@ -1350,23 +1197,18 @@ body {
     background:
         rgba(255,255,255,.48);
 
-    filter:
-        blur(4px);
+    filter: blur(4px);
 
     z-index: 80;
 }
 
-
 .glass-shine-right {
-
     position: absolute;
 
     top: 55px;
-
     right: 22px;
 
     width: 13px;
-
     height: 170px;
 
     border-radius: 50%;
@@ -1374,27 +1216,18 @@ body {
     background:
         rgba(255,255,255,.25);
 
-    filter:
-        blur(3px);
+    filter: blur(3px);
 
     z-index: 80;
 }
 
-
-/* ==========================================================
-   BOCA DEL FLORERO
-========================================================== */
-
 .vase-rim {
-
     position: absolute;
 
     left: -5px;
-
     top: -14px;
 
     width: calc(100% + 10px);
-
     height: 35px;
 
     border-radius: 50%;
@@ -1414,21 +1247,13 @@ body {
     z-index: 100;
 }
 
-
-/* ==========================================================
-   BASE DEL VIDRIO
-========================================================== */
-
 .glass-bottom {
-
     position: absolute;
 
     left: 9%;
-
     bottom: 5px;
 
     width: 82%;
-
     height: 28px;
 
     border-radius: 50%;
@@ -1445,11 +1270,10 @@ body {
 
 
 /* ==========================================================
-   FLORES EN LA BASE
+   FLORES EN LA BASE DEL FLORERO
 ========================================================== */
 
 .base-flowers {
-
     position: absolute;
 
     inset: 0;
@@ -1459,11 +1283,7 @@ body {
     pointer-events: none;
 }
 
-
-/* ROSAS */
-
 .base-rose {
-
     position: absolute;
 
     width: 95px;
@@ -1472,38 +1292,32 @@ body {
     border-radius: 50%;
 
     background:
-
         radial-gradient(
             circle at center,
             #9b6509 0 6%,
             transparent 7%
         ),
-
         radial-gradient(
             circle at 50% 30%,
             #ffe873 0 22%,
             transparent 23%
         ),
-
         radial-gradient(
             circle at 70% 50%,
             #ffd238 0 23%,
             transparent 24%
         ),
-
         radial-gradient(
             circle at 50% 72%,
             #f3bc1d 0 23%,
             transparent 24%
         ),
-
         radial-gradient(
             circle at 30% 50%,
             #ffdf55 0 23%,
             transparent 24%
         );
 }
-
 
 .base-rose-1 {
     left: 35px;
@@ -1523,48 +1337,38 @@ body {
     transform: scale(.72);
 }
 
-
-/* PEONÍA */
-
 .base-peony {
-
     position: absolute;
 
     width: 105px;
     height: 105px;
 
     left: 110px;
-
     bottom: 25px;
 
     border-radius: 50%;
 
     background:
-
         radial-gradient(
             circle at center,
             #dda91c 0 8%,
             transparent 9%
         ),
-
         radial-gradient(
             ellipse at 50% 25%,
             #ffec9d 0 27%,
             transparent 28%
         ),
-
         radial-gradient(
             ellipse at 75% 50%,
             #f9d568 0 28%,
             transparent 29%
         ),
-
         radial-gradient(
             ellipse at 50% 75%,
             #ffdc78 0 27%,
             transparent 28%
         ),
-
         radial-gradient(
             ellipse at 25% 50%,
             #ffe58b 0 28%,
@@ -1572,48 +1376,38 @@ body {
         );
 }
 
-
-/* FLORECITA */
-
 .base-small-flower {
-
     position: absolute;
 
     width: 55px;
     height: 55px;
 
     right: 135px;
-
     bottom: 15px;
 
     border-radius: 50%;
 
     background:
-
         radial-gradient(
             circle,
             #e1a715 0 15%,
             transparent 16%
         ),
-
         radial-gradient(
             circle at 50% 15%,
             #fff2bd 0 27%,
             transparent 28%
         ),
-
         radial-gradient(
             circle at 85% 50%,
             #ffedb0 0 27%,
             transparent 28%
         ),
-
         radial-gradient(
             circle at 50% 85%,
             #fff0be 0 27%,
             transparent 28%
         ),
-
         radial-gradient(
             circle at 15% 50%,
             #fff3ca 0 27%,
@@ -1627,13 +1421,10 @@ body {
 ========================================================== */
 
 .final-section {
-
     min-height: 90vh;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -1648,24 +1439,19 @@ body {
         );
 }
 
-
 .final-content {
-
-    max-width: 650px;
+    width: min(100%, 650px);
 }
 
-
 .final-content h2 {
-
     font-size:
         clamp(
-            2.7rem,
+            2rem,
             7vw,
             4.5rem
         );
 
     font-style: italic;
-
     font-weight: normal;
 
     color: #cf9917;
@@ -1673,12 +1459,10 @@ body {
     margin-bottom: 30px;
 }
 
-
 .final-content p {
-
     font-size:
         clamp(
-            1.25rem,
+            1.05rem,
             3vw,
             1.7rem
         );
@@ -1694,47 +1478,151 @@ body {
 
 
 /* ==========================================================
-   RESPONSIVE
+   TABLET
 ========================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
-    .bouquet-container {
-
-        transform:
-            scale(.72);
-
-        transform-origin:
-            center center;
+    .bouquet-section {
+        min-height: 105vh;
     }
 
-
-    .intro-text {
-
-        font-size: 1.35rem;
+    .bouquet-container {
+        width: min(600px, 88vw);
     }
 
 }
 
 
-@media (max-width: 480px) {
+/* ==========================================================
+   CELULAR
+========================================================== */
 
-    .bouquet-container {
+@media (max-width: 600px) {
 
-        transform:
-            scale(.55);
+    .intro {
+        padding:
+            25px 16px;
     }
 
-
-    .intro-lily {
-
-        width: 150px;
+    .intro-content {
+        width: 100%;
     }
-
 
     .intro-text {
+        font-size:
+            clamp(
+                1.05rem,
+                5vw,
+                1.35rem
+            );
 
-        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .scroll-indicator {
+        margin-top: 25px;
+    }
+
+    .journey {
+        height: 125vh;
+    }
+
+    .bouquet-section {
+        min-height: 90vh;
+
+        padding:
+            60px 10px;
+    }
+
+    .bouquet-container {
+        width: 94vw;
+    }
+
+    .final-section {
+        min-height: 85svh;
+
+        padding:
+            45px 20px;
+    }
+
+    .final-content h2 {
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                3.2rem
+            );
+    }
+
+    .final-content p {
+        font-size:
+            clamp(
+                1rem,
+                4.5vw,
+                1.35rem
+            );
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR PEQUEÑO
+========================================================== */
+
+@media (max-width: 390px) {
+
+    .bouquet-container {
+        width: 96vw;
+    }
+
+    .intro-text {
+        font-size: 1.02rem;
+    }
+
+    .floating-petals span {
+        width: 9px;
+        height: 15px;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR HORIZONTAL
+========================================================== */
+
+@media (
+    max-width: 900px
+) and (
+    orientation: landscape
+) {
+
+    .intro {
+        min-height: 100svh;
+    }
+
+    .intro-lily {
+        width: 100px;
+        margin-bottom: 8px;
+    }
+
+    .intro-text {
+        max-width: 650px;
+        font-size: 1rem;
+    }
+
+    .scroll-indicator {
+        margin-top: 12px;
+    }
+
+    .bouquet-section {
+        min-height: 120vh;
+    }
+
+    .bouquet-container {
+        width: min(500px, 70vw);
     }
 
 }
