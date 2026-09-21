@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+
+    background: #ffffff;
+
+    transition: background 1s ease;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ffffff;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.intro-content {
+
+    text-align: center;
+
+    position: relative;
+
+    transform: translateY(-30px);
+}
+
+
+/* =========================================
+   LIRIO
+========================================= */
+
+.lily {
+
+    width: 170px;
+    height: 190px;
+
+    position: relative;
+
+    margin: 0 auto 30px;
+
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+
+.petal {
+
+    position: absolute;
+
+    width: 65px;
+    height: 105px;
+
+    background: linear-gradient(
+        145deg,
+        #fff176,
+        #f4c400
+    );
+
+    border-radius: 70% 70% 45% 45%;
+
+    transform-origin: bottom center;
+
+    box-shadow:
+        0 5px 15px rgba(200, 150, 0, 0.15);
+}
+
+
+/* pétalos */
+
+.petal-1 {
+    left: 52px;
+    top: 5px;
+    transform: rotate(0deg);
+}
+
+.petal-2 {
+    left: 30px;
+    top: 20px;
+    transform: rotate(-55deg);
+}
+
+.petal-3 {
+    left: 70px;
+    top: 20px;
+    transform: rotate(55deg);
+}
+
+.petal-4 {
+    left: 10px;
+    top: 55px;
+    transform: rotate(-100deg);
+}
+
+.petal-5 {
+    left: 90px;
+    top: 55px;
+    transform: rotate(100deg);
+}
+
+.petal-6 {
+    left: 52px;
+    top: 55px;
+    transform: rotate(180deg);
+}
+
+
+.lily-center {
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    background: #d49b00;
+
+    border-radius: 50%;
+
+    left: 74px;
+    top: 72px;
+
+    z-index: 5;
+}
+
+
+/* tallo */
+
+.stem {
+
+    position: absolute;
+
+    width: 8px;
+    height: 110px;
+
+    background: #6d9634;
+
+    left: 81px;
+    top: 100px;
+
+    border-radius: 10px;
+
+    z-index: -1;
+}
+
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.intro-text {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 2rem;
+
+    line-height: 1.5;
+
+    font-style: italic;
+
+    color: #3d3d3d;
+
+    padding: 0 25px;
+}
+
+
+/* indicador */
+
+.scroll-indicator {
+
+    margin-top: 45px;
+
+    font-size: 2rem;
+
+    color: #c8a400;
+
+    animation: arrowMove 2s infinite;
+}
+
+
+/* =========================================
+   VIAJE DEL LIRIO
+========================================= */
+
+.journey {
+
+    height: 150vh;
+
+    position: relative;
+
+    background: transparent;
+}
+
+
+.falling-lily {
+
+    position: fixed;
+
+    top: 15vh;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition:
+        top 0.15s linear,
+        transform 0.15s linear,
+        opacity 0.5s ease;
+}
+
+
+.lily-small {
+
+    width: 110px;
+    height: 130px;
+
+    position: relative;
+
+    transform: scale(.75);
+}
+
+
+.falling-stem {
+
+    width: 6px;
+    height: 100px;
+
+    background: #709b38;
+
+    position: absolute;
+
+    left: 52px;
+    top: 80px;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   BOUQUET
+========================================= */
+
+.bouquet-section {
+
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fffdf4,
+            #fff4b8
+        );
+
+    overflow: hidden;
+}
+
+
+.bouquet {
+
+    width: 500px;
+
+    height: 500px;
+
+    position: relative;
+
+    margin-top: 100px;
+}
+
+
+/* =========================================
+   FLORERO
+========================================= */
+
+.vase {
+
+    position: absolute;
+
+    bottom: 40px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 230px;
+
+    height: 280px;
+
+    z-index: 10;
+}
+
+
+.vase-body {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 220px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d9b66d,
+            #f8df9d,
+            #d6ad58
+        );
+
+    border-radius:
+        20px
+        20px
+        70px
+        70px;
+
+    box-shadow:
+        0 15px 35px rgba(120, 90, 0, .2);
+}
+
+
+.vase-opening {
+
+    position: absolute;
+
+    top: 35px;
+
+    left: 10px;
+
+    width: 210px;
+
+    height: 50px;
+
+    background: #d3ad61;
+
+    border-radius: 50%;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   FLORES DEL BOUQUET
+========================================= */
+
+.flower {
+
+    position: absolute;
+
+    font-size: 5rem;
+
+    z-index: 5;
+
+    filter: drop-shadow(
+        0 5px 5px rgba(0,0,0,.1)
+    );
+}
+
+
+.flower-1 {
+    left: 80px;
+    top: 80px;
+    transform: rotate(-15deg);
+}
+
+.flower-2 {
+    left: 190px;
+    top: 20px;
+    transform: rotate(5deg);
+}
+
+.flower-3 {
+    left: 285px;
+    top: 80px;
+    transform: rotate(15deg);
+}
+
+.flower-4 {
+    left: 130px;
+    top: 20px;
+    transform: rotate(-10deg);
+}
+
+.flower-5 {
+    left: 220px;
+    top: 110px;
+    transform: rotate(10deg);
+}
+
+.flower-6 {
+    left: 330px;
+    top: 30px;
+    transform: rotate(15deg);
+}
+
+.flower-7 {
+    left: 45px;
+    top: 140px;
+}
+
+
+/* =========================================
+   HOJAS
+========================================= */
+
+.leaf {
+
+    width: 90px;
+
+    height: 35px;
+
+    background: #71963b;
+
+    border-radius: 100% 0 100% 0;
+
+    position: absolute;
+
+    z-index: 3;
+}
+
+
+.leaf-1 {
+    left: 90px;
+    top: 200px;
+    transform: rotate(-35deg);
+}
+
+.leaf-2 {
+    left: 300px;
+    top: 210px;
+    transform: rotate(35deg);
+}
+
+.leaf-3 {
+    left: 170px;
+    top: 180px;
+    transform: rotate(-5deg);
+}
+
+.leaf-4 {
+    left: 240px;
+    top: 190px;
+    transform: rotate(20deg);
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes flowerFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+}
+
+
+@keyframes arrowMove {
+
+    0%, 100% {
+        transform: translateY(0);
+
+        opacity: .5;
+    }
+
+    50% {
+        transform: translateY(12px);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .intro-text {
+        font-size: 1.45rem;
+    }
+
+    .bouquet {
+        transform: scale(.75);
+    }
+
+    .flower {
+        font-size: 4rem;
+    }
+}
