@@ -1,3 +1,7 @@
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,521 +13,1270 @@ html {
 }
 
 body {
+
+    min-height: 100vh;
+
     overflow-x: hidden;
-    font-family: Georgia, "Times New Roman", serif;
 
-    background: #ffffff;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    transition: background 1s ease;
+    color: #66551d;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffdf4 0%,
+            #fff8d8 55%,
+            #ffeaa1 100%
+        );
+
+    transition:
+        background 1s ease;
 }
 
 
-/* =========================================
+/* =========================================================
+   FONDO DE ROSAS
+========================================================= */
+
+.rose-garden {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -5;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.92) 0%,
+            rgba(255,248,206,.72) 45%,
+            rgba(247,211,75,.38) 100%
+        );
+}
+
+
+/* =========================================================
+   ROSAS DEL FONDO
+========================================================= */
+
+.background-rose {
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    opacity: .34;
+
+    filter:
+        blur(1px)
+        drop-shadow(
+            0 12px 18px
+            rgba(145,105,10,.15)
+        );
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            #b77a08 0 5%,
+            transparent 6%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 28%,
+            #ffd52e 0 19%,
+            transparent 20%
+        ),
+
+        radial-gradient(
+            ellipse at 75% 38%,
+            #f9ca24 0 19%,
+            transparent 20%
+        ),
+
+        radial-gradient(
+            ellipse at 78% 68%,
+            #ffd83a 0 19%,
+            transparent 20%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 78%,
+            #f4c522 0 19%,
+            transparent 20%
+        ),
+
+        radial-gradient(
+            ellipse at 22% 68%,
+            #ffd83a 0 19%,
+            transparent 20%
+        ),
+
+        radial-gradient(
+            ellipse at 22% 38%,
+            #f4c522 0 19%,
+            transparent 20%
+        ),
+
+        radial-gradient(
+            circle,
+            #ffe56b 0 36%,
+            #f7c927 37% 65%,
+            transparent 66%
+        );
+}
+
+
+/* posiciones */
+
+.rose-a {
+    width: 300px;
+    height: 300px;
+    top: -80px;
+    left: -80px;
+}
+
+.rose-b {
+    width: 230px;
+    height: 230px;
+    top: 8%;
+    right: -60px;
+}
+
+.rose-c {
+    width: 260px;
+    height: 260px;
+    top: 32%;
+    left: -100px;
+}
+
+.rose-d {
+    width: 210px;
+    height: 210px;
+    top: 43%;
+    right: -50px;
+}
+
+.rose-e {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    left: -70px;
+}
+
+.rose-f {
+    width: 260px;
+    height: 260px;
+    bottom: -60px;
+    right: -50px;
+}
+
+.rose-g {
+    width: 160px;
+    height: 160px;
+    top: 17%;
+    left: 18%;
+}
+
+.rose-h {
+    width: 190px;
+    height: 190px;
+    top: 21%;
+    right: 17%;
+}
+
+.rose-i {
+    width: 180px;
+    height: 180px;
+    bottom: 17%;
+    left: 17%;
+}
+
+.rose-j {
+    width: 180px;
+    height: 180px;
+    bottom: 19%;
+    right: 17%;
+}
+
+
+/* =========================================================
+   PÉTALOS
+========================================================= */
+
+.floating-petal {
+
+    position: fixed;
+
+    width: 15px;
+    height: 24px;
+
+    border-radius:
+        80% 20% 80% 20%;
+
+    background: #ffd83c;
+
+    opacity: .35;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation:
+        petalFall
+        linear
+        infinite;
+}
+
+.p1 {
+    left: 12%;
+    animation-duration: 11s;
+}
+
+.p2 {
+    left: 32%;
+    animation-duration: 14s;
+    animation-delay: -4s;
+}
+
+.p3 {
+    left: 57%;
+    animation-duration: 10s;
+    animation-delay: -6s;
+}
+
+.p4 {
+    left: 77%;
+    animation-duration: 13s;
+    animation-delay: -2s;
+}
+
+.p5 {
+    left: 91%;
+    animation-duration: 15s;
+    animation-delay: -8s;
+}
+
+@keyframes petalFall {
+
+    0% {
+        top: -40px;
+        transform:
+            rotate(0deg)
+            translateX(0);
+    }
+
+    50% {
+        transform:
+            rotate(180deg)
+            translateX(35px);
+    }
+
+    100% {
+        top: 110vh;
+        transform:
+            rotate(360deg)
+            translateX(-25px);
+    }
+}
+
+
+/* =========================================================
    INTRO
-========================================= */
+========================================================= */
 
 .intro {
 
     height: 100vh;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
-    background: #ffffff;
-
     position: relative;
 
-    z-index: 2;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,255,255,.95),
+            rgba(255,249,220,.72),
+            transparent 75%
+        );
 }
+
 
 .intro-content {
 
+    width: min(90%, 760px);
+
     text-align: center;
 
-    position: relative;
+    transform:
+        translateY(-20px);
 
-    transform: translateY(-30px);
+    animation:
+        introAppear
+        1.8s
+        ease
+        forwards;
 }
 
 
-/* =========================================
-   LIRIO
-========================================= */
+@keyframes introAppear {
 
-.lily {
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
 
-    width: 170px;
-    height: 190px;
-
-    position: relative;
-
-    margin: 0 auto 30px;
-
-    animation: flowerFloat 4s ease-in-out infinite;
+    to {
+        opacity: 1;
+        transform:
+            translateY(-20px);
+    }
 }
 
 
-.petal {
+/* =========================================================
+   LIRIO PRINCIPAL
+========================================================= */
 
-    position: absolute;
+.lily-intro {
 
-    width: 65px;
-    height: 105px;
+    width: 190px;
 
-    background: linear-gradient(
-        145deg,
-        #fff176,
-        #f4c400
-    );
+    margin: 0 auto 15px;
 
-    border-radius: 70% 70% 45% 45%;
+    animation:
+        lilyFloat
+        4s
+        ease-in-out
+        infinite;
+}
 
-    transform-origin: bottom center;
+.lily-intro svg {
 
-    box-shadow:
-        0 5px 15px rgba(200, 150, 0, 0.15);
+    width: 100%;
+
+    overflow: visible;
+
+    filter:
+        drop-shadow(
+            0 10px 10px
+            rgba(130,100,0,.15)
+        );
+}
+
+@keyframes lilyFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(1deg);
+    }
 }
 
 
-/* pétalos */
-
-.petal-1 {
-    left: 52px;
-    top: 5px;
-    transform: rotate(0deg);
-}
-
-.petal-2 {
-    left: 30px;
-    top: 20px;
-    transform: rotate(-55deg);
-}
-
-.petal-3 {
-    left: 70px;
-    top: 20px;
-    transform: rotate(55deg);
-}
-
-.petal-4 {
-    left: 10px;
-    top: 55px;
-    transform: rotate(-100deg);
-}
-
-.petal-5 {
-    left: 90px;
-    top: 55px;
-    transform: rotate(100deg);
-}
-
-.petal-6 {
-    left: 52px;
-    top: 55px;
-    transform: rotate(180deg);
-}
-
-
-.lily-center {
-
-    position: absolute;
-
-    width: 22px;
-    height: 22px;
-
-    background: #d49b00;
-
-    border-radius: 50%;
-
-    left: 74px;
-    top: 72px;
-
-    z-index: 5;
-}
-
-
-/* tallo */
-
-.stem {
-
-    position: absolute;
-
-    width: 8px;
-    height: 110px;
-
-    background: #6d9634;
-
-    left: 81px;
-    top: 100px;
-
-    border-radius: 10px;
-
-    z-index: -1;
-}
-
-
-/* =========================================
+/* =========================================================
    TEXTO
-========================================= */
+========================================================= */
 
-.intro-text {
+.intro-message {
 
-    max-width: 650px;
+    max-width: 700px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    font-size: 2rem;
+    padding: 0 20px;
+
+    font-size:
+        clamp(
+            1.4rem,
+            3vw,
+            2.15rem
+        );
 
     line-height: 1.5;
 
     font-style: italic;
 
-    color: #3d3d3d;
+    color: #6c5a25;
 
-    padding: 0 25px;
+    text-shadow:
+        0 1px 1px
+        rgba(255,255,255,.7);
 }
 
 
-/* indicador */
+/* =========================================================
+   FLECHA
+========================================================= */
 
-.scroll-indicator {
+.scroll-arrow {
 
-    margin-top: 45px;
+    width: 30px;
+    height: 45px;
 
-    font-size: 2rem;
-
-    color: #c8a400;
-
-    animation: arrowMove 2s infinite;
-}
-
-
-/* =========================================
-   VIAJE DEL LIRIO
-========================================= */
-
-.journey {
-
-    height: 150vh;
+    margin:
+        40px auto 0;
 
     position: relative;
 
-    background: transparent;
+    animation:
+        arrowBounce
+        2s
+        infinite;
 }
 
-
-.falling-lily {
-
-    position: fixed;
-
-    top: 15vh;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 20;
-
-    pointer-events: none;
-
-    opacity: 0;
-
-    transition:
-        top 0.15s linear,
-        transform 0.15s linear,
-        opacity 0.5s ease;
-}
-
-
-.lily-small {
-
-    width: 110px;
-    height: 130px;
-
-    position: relative;
-
-    transform: scale(.75);
-}
-
-
-.falling-stem {
-
-    width: 6px;
-    height: 100px;
-
-    background: #709b38;
+.scroll-arrow span {
 
     position: absolute;
 
-    left: 52px;
-    top: 80px;
+    width: 18px;
+    height: 18px;
 
-    border-radius: 10px;
+    left: 6px;
+    top: 5px;
+
+    border-right:
+        2px solid #c49717;
+
+    border-bottom:
+        2px solid #c49717;
+
+    transform:
+        rotate(45deg);
 }
 
-
-/* =========================================
-   BOUQUET
-========================================= */
-
-.bouquet-section {
-
-    height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #fffdf4,
-            #fff4b8
-        );
-
-    overflow: hidden;
-}
-
-
-.bouquet {
-
-    width: 500px;
-
-    height: 500px;
-
-    position: relative;
-
-    margin-top: 100px;
-}
-
-
-/* =========================================
-   FLORERO
-========================================= */
-
-.vase {
-
-    position: absolute;
-
-    bottom: 40px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 230px;
-
-    height: 280px;
-
-    z-index: 10;
-}
-
-
-.vase-body {
-
-    position: absolute;
-
-    bottom: 0;
-
-    width: 100%;
-
-    height: 220px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #d9b66d,
-            #f8df9d,
-            #d6ad58
-        );
-
-    border-radius:
-        20px
-        20px
-        70px
-        70px;
-
-    box-shadow:
-        0 15px 35px rgba(120, 90, 0, .2);
-}
-
-
-.vase-opening {
-
-    position: absolute;
-
-    top: 35px;
-
-    left: 10px;
-
-    width: 210px;
-
-    height: 50px;
-
-    background: #d3ad61;
-
-    border-radius: 50%;
-
-    z-index: 3;
-}
-
-
-/* =========================================
-   FLORES DEL BOUQUET
-========================================= */
-
-.flower {
-
-    position: absolute;
-
-    font-size: 5rem;
-
-    z-index: 5;
-
-    filter: drop-shadow(
-        0 5px 5px rgba(0,0,0,.1)
-    );
-}
-
-
-.flower-1 {
-    left: 80px;
-    top: 80px;
-    transform: rotate(-15deg);
-}
-
-.flower-2 {
-    left: 190px;
-    top: 20px;
-    transform: rotate(5deg);
-}
-
-.flower-3 {
-    left: 285px;
-    top: 80px;
-    transform: rotate(15deg);
-}
-
-.flower-4 {
-    left: 130px;
-    top: 20px;
-    transform: rotate(-10deg);
-}
-
-.flower-5 {
-    left: 220px;
-    top: 110px;
-    transform: rotate(10deg);
-}
-
-.flower-6 {
-    left: 330px;
-    top: 30px;
-    transform: rotate(15deg);
-}
-
-.flower-7 {
-    left: 45px;
-    top: 140px;
-}
-
-
-/* =========================================
-   HOJAS
-========================================= */
-
-.leaf {
-
-    width: 90px;
-
-    height: 35px;
-
-    background: #71963b;
-
-    border-radius: 100% 0 100% 0;
-
-    position: absolute;
-
-    z-index: 3;
-}
-
-
-.leaf-1 {
-    left: 90px;
-    top: 200px;
-    transform: rotate(-35deg);
-}
-
-.leaf-2 {
-    left: 300px;
-    top: 210px;
-    transform: rotate(35deg);
-}
-
-.leaf-3 {
-    left: 170px;
-    top: 180px;
-    transform: rotate(-5deg);
-}
-
-.leaf-4 {
-    left: 240px;
-    top: 190px;
-    transform: rotate(20deg);
-}
-
-
-/* =========================================
-   ANIMACIONES
-========================================= */
-
-@keyframes flowerFloat {
+@keyframes arrowBounce {
 
     0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-12px) rotate(2deg);
-    }
-}
-
-
-@keyframes arrowMove {
-
-    0%, 100% {
-        transform: translateY(0);
+        transform:
+            translateY(0);
 
         opacity: .5;
     }
 
     50% {
-        transform: translateY(12px);
+        transform:
+            translateY(10px);
 
         opacity: 1;
     }
 }
 
 
-/* =========================================
-   CELULAR
-========================================= */
+/* =========================================================
+   ZONA DE CAÍDA
+========================================================= */
 
-@media (max-width: 600px) {
+.journey {
 
-    .intro-text {
-        font-size: 1.45rem;
+    height: 150vh;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   FLOR QUE BAJA
+========================================================= */
+
+.falling-flower {
+
+    position: fixed;
+
+    width: 140px;
+
+    left: 50%;
+
+    top: 8vh;
+
+    z-index: 50;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        opacity .5s ease;
+}
+
+.falling-flower svg {
+
+    width: 100%;
+
+    filter:
+        drop-shadow(
+            0 10px 10px
+            rgba(100,80,0,.15)
+        );
+}
+
+
+/* =========================================================
+   RAMO
+========================================================= */
+
+.bouquet-section {
+
+    min-height: 115vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    padding:
+        100px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,248,211,.55),
+            rgba(255,232,139,.78)
+        );
+}
+
+
+.bouquet-scene {
+
+    width: 600px;
+
+    height: 650px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+}
+
+
+.bouquet {
+
+    width: 520px;
+
+    height: 600px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   TALLOS
+========================================================= */
+
+.stem {
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 310px;
+
+    bottom: 130px;
+
+    left: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3d6825,
+            #79a94b,
+            #3f7028
+        );
+
+    border-radius: 10px;
+
+    transform-origin: bottom center;
+
+    z-index: 2;
+}
+
+.stem-1 {
+    transform: rotate(-30deg);
+}
+
+.stem-2 {
+    transform: rotate(-20deg);
+}
+
+.stem-3 {
+    transform: rotate(-10deg);
+}
+
+.stem-4 {
+    transform: rotate(0deg);
+}
+
+.stem-5 {
+    transform: rotate(11deg);
+}
+
+.stem-6 {
+    transform: rotate(21deg);
+}
+
+.stem-7 {
+    transform: rotate(31deg);
+}
+
+
+/* =========================================================
+   HOJAS
+========================================================= */
+
+.leaf {
+
+    position: absolute;
+
+    width: 105px;
+    height: 42px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #527e2c,
+            #8caf4b
+        );
+
+    border-radius:
+        100% 0 100% 0;
+
+    z-index: 3;
+
+    box-shadow:
+        inset 0 -4px 5px
+        rgba(40,70,20,.15);
+}
+
+.leaf-1 {
+    left: 80px;
+    bottom: 210px;
+    transform: rotate(-35deg);
+}
+
+.leaf-2 {
+    left: 320px;
+    bottom: 220px;
+    transform: rotate(30deg);
+}
+
+.leaf-3 {
+    left: 125px;
+    bottom: 285px;
+    transform: rotate(-50deg);
+}
+
+.leaf-4 {
+    left: 285px;
+    bottom: 290px;
+    transform: rotate(45deg);
+}
+
+.leaf-5 {
+    left: 205px;
+    bottom: 335px;
+    transform: rotate(-10deg);
+}
+
+.leaf-6 {
+    left: 350px;
+    bottom: 330px;
+    transform: rotate(35deg);
+}
+
+.leaf-7 {
+    left: 65px;
+    bottom: 330px;
+    transform: rotate(-45deg);
+}
+
+.leaf-8 {
+    left: 245px;
+    bottom: 240px;
+    transform: rotate(15deg);
+}
+
+
+/* =========================================================
+   ROSAS
+========================================================= */
+
+.flower {
+
+    position: absolute;
+
+    z-index: 10;
+
+    filter:
+        drop-shadow(
+            0 8px 7px
+            rgba(100,70,0,.15)
+        );
+}
+
+
+.rose {
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            #a96d08 0 7%,
+            transparent 8%
+        ),
+
+        radial-gradient(
+            circle at 50% 38%,
+            #ffe36a 0 20%,
+            transparent 21%
+        ),
+
+        radial-gradient(
+            circle at 68% 50%,
+            #ffd02e 0 23%,
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 50% 67%,
+            #f5bd19 0 23%,
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 32% 50%,
+            #ffd83c 0 23%,
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle,
+            #ffe36a 0 37%,
+            #f4be1e 38% 67%,
+            transparent 68%
+        );
+}
+
+.r1 {
+    left: 80px;
+    bottom: 365px;
+}
+
+.r2 {
+    left: 210px;
+    bottom: 420px;
+    transform: scale(.9);
+}
+
+.r3 {
+    left: 335px;
+    bottom: 350px;
+    transform: scale(.95);
+}
+
+
+/* =========================================================
+   PEONÍAS
+========================================================= */
+
+.peony {
+
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #f7c62b 0 9%,
+            transparent 10%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 25%,
+            #ffe987 0 27%,
+            transparent 28%
+        ),
+
+        radial-gradient(
+            ellipse at 75% 48%,
+            #f7d15c 0 27%,
+            transparent 28%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 76%,
+            #ffd96a 0 27%,
+            transparent 28%
+        ),
+
+        radial-gradient(
+            ellipse at 25% 48%,
+            #ffe27b 0 27%,
+            transparent 28%
+        );
+}
+
+.p1 {
+    left: 140px;
+    bottom: 400px;
+}
+
+.p2 {
+    left: 285px;
+    bottom: 390px;
+    transform: scale(.85);
+}
+
+
+/* =========================================================
+   GIRASOLES
+========================================================= */
+
+.sunflower {
+
+    position: absolute;
+
+    width: 105px;
+    height: 105px;
+
+    z-index: 11;
+}
+
+.sun-petals {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            #ffd62e 0deg 18deg,
+            transparent 18deg 30deg
+        );
+
+    filter:
+        drop-shadow(
+            0 5px 5px
+            rgba(150,100,0,.15)
+        );
+}
+
+.sun-center {
+
+    position: absolute;
+
+    width: 47px;
+    height: 47px;
+
+    left: 29px;
+    top: 29px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #5e3911,
+            #9c5e11
+        );
+}
+
+.s1 {
+    left: 115px;
+    bottom: 470px;
+}
+
+.s2 {
+    left: 350px;
+    bottom: 460px;
+    transform: scale(.85);
+}
+
+
+/* =========================================================
+   LIRIO DEL RAMO
+========================================================= */
+
+.bouquet-lily {
+
+    position: absolute;
+
+    width: 150px;
+
+    left: 190px;
+
+    bottom: 440px;
+
+    z-index: 15;
+}
+
+.bouquet-lily svg {
+
+    width: 100%;
+
+    filter:
+        drop-shadow(
+            0 8px 8px
+            rgba(120,90,0,.15)
+        );
+}
+
+
+/* =========================================================
+   FLORES PEQUEÑAS
+========================================================= */
+
+.tiny-flower {
+
+    position: absolute;
+
+    color: #f4c928;
+
+    font-size: 34px;
+
+    z-index: 13;
+
+    text-shadow:
+        0 2px 3px
+        rgba(120,90,0,.15);
+}
+
+.tf1 {
+    left: 35px;
+    bottom: 390px;
+}
+
+.tf2 {
+    left: 420px;
+    bottom: 380px;
+}
+
+.tf3 {
+    left: 65px;
+    bottom: 455px;
+}
+
+.tf4 {
+    left: 395px;
+    bottom: 440px;
+}
+
+
+/* =========================================================
+   FLORERO DE CRISTAL
+========================================================= */
+
+.glass-vase {
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 300px;
+
+    left: 135px;
+
+    bottom: 20px;
+
+    z-index: 30;
+
+    border-radius:
+        30px
+        30px
+        90px
+        90px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.16),
+            rgba(255,255,255,.42),
+            rgba(255,255,255,.12)
+        );
+
+    border:
+        3px solid
+        rgba(255,255,255,.78);
+
+    box-shadow:
+
+        inset
+        15px 0 30px
+        rgba(255,255,255,.35),
+
+        inset
+        -18px 0 30px
+        rgba(110,180,170,.12),
+
+        0 20px 40px
+        rgba(90,80,20,.20);
+
+    backdrop-filter:
+        blur(3px);
+}
+
+
+/* =========================================================
+   AGUA
+========================================================= */
+
+.water {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 5%;
+
+    width: 90%;
+
+    height: 145px;
+
+    border-radius:
+        0 0 80px 80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(210,245,231,.20),
+            rgba(110,190,175,.28)
+        );
+}
+
+
+/* =========================================================
+   BORDE DEL FLORERO
+========================================================= */
+
+.vase-rim {
+
+    position: absolute;
+
+    top: -12px;
+
+    left: -4px;
+
+    width: calc(100% + 8px);
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(255,255,255,.85);
+
+    background:
+        rgba(255,255,255,.16);
+
+    box-shadow:
+        inset 0 5px 8px
+        rgba(255,255,255,.35);
+}
+
+
+/* =========================================================
+   REFLEJOS
+========================================================= */
+
+.glass-highlight {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 24px;
+
+    width: 25px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.40);
+
+    filter:
+        blur(4px);
+}
+
+
+.glass-reflection {
+
+    position: absolute;
+
+    top: 40px;
+
+    right: 22px;
+
+    width: 12px;
+
+    height: 160px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.25);
+
+    filter:
+        blur(3px);
+}
+
+
+/* =========================================================
+   MENSAJE FINAL
+========================================================= */
+
+.final-message {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffeaa0,
+            #fff4c9
+        );
+}
+
+
+.final-message div {
+
+    max-width: 650px;
+
+}
+
+
+.final-message h2 {
+
+    font-size:
+        clamp(
+            2.5rem,
+            7vw,
+            4.5rem
+        );
+
+    color: #d29b17;
+
+    font-weight: normal;
+
+    font-style: italic;
+
+    margin-bottom: 30px;
+}
+
+
+.final-message p {
+
+    font-size:
+        clamp(
+            1.3rem,
+            3vw,
+            1.8rem
+        );
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+    color: #6d5a27;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .bouquet-scene {
+
+        transform:
+            scale(.72);
+
+        transform-origin:
+            center bottom;
     }
 
-    .bouquet {
-        transform: scale(.75);
+    .intro-message {
+
+        font-size: 1.35rem;
     }
 
-    .flower {
-        font-size: 4rem;
+    .background-rose {
+
+        opacity: .22;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .bouquet-scene {
+
+        transform:
+            scale(.58);
+    }
+
+    .lily-intro {
+
+        width: 150px;
+    }
+
+    .intro-message {
+
+        font-size: 1.2rem;
     }
 }
