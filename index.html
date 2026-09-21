@@ -1,107 +1,434 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Para ti 💛</title>
+    <title>Para mi gran y unico amor Fhri 💛</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- INTRODUCCIÓN -->
-    <section class="intro">
+    <!-- =====================================================
+         FONDO DE ROSAS
+    ====================================================== -->
 
-        <div class="intro-content">
+    <div class="rose-garden" aria-hidden="true">
 
-            <div class="lily" id="lily">
-                <div class="lily-center"></div>
+        <div class="background-rose rose-a"></div>
+        <div class="background-rose rose-b"></div>
+        <div class="background-rose rose-c"></div>
+        <div class="background-rose rose-d"></div>
+        <div class="background-rose rose-e"></div>
+        <div class="background-rose rose-f"></div>
+        <div class="background-rose rose-g"></div>
+        <div class="background-rose rose-h"></div>
+        <div class="background-rose rose-i"></div>
+        <div class="background-rose rose-j"></div>
 
-                <div class="petal petal-1"></div>
-                <div class="petal petal-2"></div>
-                <div class="petal petal-3"></div>
-                <div class="petal petal-4"></div>
-                <div class="petal petal-5"></div>
-                <div class="petal petal-6"></div>
+    </div>
 
-                <div class="stem"></div>
+
+    <!-- =====================================================
+         PÉTALOS FLOTANDO
+    ====================================================== -->
+
+    <div class="petals" aria-hidden="true">
+
+        <span class="floating-petal p1"></span>
+        <span class="floating-petal p2"></span>
+        <span class="floating-petal p3"></span>
+        <span class="floating-petal p4"></span>
+        <span class="floating-petal p5"></span>
+
+    </div>
+
+
+    <!-- =====================================================
+         INTRODUCCIÓN
+    ====================================================== -->
+
+    <main>
+
+        <section class="intro">
+
+            <div class="intro-content">
+
+                <!-- LIRIO PRINCIPAL -->
+
+                <div class="lily-intro">
+
+                    <svg viewBox="0 0 220 260"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- tallo -->
+
+                        <path
+                            d="M110 135 C108 175 112 215 108 255"
+                            stroke="#5b8730"
+                            stroke-width="9"
+                            fill="none"
+                            stroke-linecap="round"/>
+
+
+                        <!-- hoja -->
+
+                        <path
+                            d="M110 185
+                               C75 165 45 175 25 200
+                               C65 207 92 202 110 185Z"
+                            fill="#6f9c3d"/>
+
+
+                        <!-- pétalos -->
+
+                        <path
+                            d="M110 135
+                               C65 110 45 75 62 28
+                               C90 36 105 65 110 100
+                               C115 65 130 36 158 28
+                               C175 75 155 110 110 135Z"
+                            fill="#ffd92f"/>
+
+
+                        <path
+                            d="M110 130
+                               C72 122 42 105 42 70
+                               C76 66 100 83 110 110Z"
+                            fill="#ffe56a"/>
+
+
+                        <path
+                            d="M110 130
+                               C148 122 178 105 178 70
+                               C144 66 120 83 110 110Z"
+                            fill="#ffe56a"/>
+
+
+                        <path
+                            d="M110 130
+                               C85 104 82 65 110 15
+                               C138 65 135 104 110 130Z"
+                            fill="#ffd42b"/>
+
+
+                        <!-- centro -->
+
+                        <circle
+                            cx="110"
+                            cy="126"
+                            r="12"
+                            fill="#d99c18"/>
+
+                        <circle
+                            cx="110"
+                            cy="126"
+                            r="5"
+                            fill="#8e6714"/>
+
+                    </svg>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <p class="intro-message">
+                    Esta vez te quiero regalar algo que dure,
+                    desde el fondo de mi corazón...
+                </p>
+
+
+                <div class="scroll-arrow">
+                    <span></span>
+                </div>
+
             </div>
 
-            <p class="intro-text">
-                Esta vez te quiero regalar algo que dure,
-                desde el fondo de mi corazón
-            </p>
+        </section>
 
-            <div class="scroll-indicator">
-                ↓
+
+
+        <!-- =================================================
+             ZONA DE SCROLL / VIAJE
+        ================================================== -->
+
+        <section class="journey">
+
+            <div class="falling-flower" id="fallingFlower">
+
+                <svg viewBox="0 0 160 240"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- tallo -->
+
+                    <path
+                        d="M80 90
+                           C75 130 82 180 80 235"
+                        stroke="#56832f"
+                        stroke-width="7"
+                        fill="none"
+                        stroke-linecap="round"/>
+
+
+                    <!-- hoja -->
+
+                    <path
+                        d="M78 160
+                           C50 142 28 148 17 170
+                           C45 179 66 176 78 160Z"
+                        fill="#679538"/>
+
+
+                    <!-- pétalos -->
+
+                    <path
+                        d="M80 95
+                           C48 75 35 45 48 18
+                           C70 22 78 42 80 67
+                           C82 42 90 22 112 18
+                           C125 45 112 75 80 95Z"
+                        fill="#ffd52e"/>
+
+
+                    <path
+                        d="M80 92
+                           C55 85 35 70 35 48
+                           C58 45 74 59 80 78Z"
+                        fill="#ffe568"/>
+
+
+                    <path
+                        d="M80 92
+                           C105 85 125 70 125 48
+                           C102 45 86 59 80 78Z"
+                        fill="#ffe568"/>
+
+
+                    <path
+                        d="M80 92
+                           C62 73 62 42 80 8
+                           C98 42 98 73 80 92Z"
+                        fill="#ffcf1e"/>
+
+
+                    <circle
+                        cx="80"
+                        cy="88"
+                        r="9"
+                        fill="#d79814"/>
+
+                </svg>
+
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- ESPACIO DE ANIMACIÓN -->
-    <section class="journey">
 
-        <div class="falling-lily" id="fallingLily">
+        <!-- =================================================
+             RAMO FINAL
+        ================================================== -->
 
-            <div class="lily-small">
-                <div class="lily-center"></div>
+        <section class="bouquet-section">
 
-                <div class="petal petal-1"></div>
-                <div class="petal petal-2"></div>
-                <div class="petal petal-3"></div>
-                <div class="petal petal-4"></div>
-                <div class="petal petal-5"></div>
-                <div class="petal petal-6"></div>
+            <div class="bouquet-scene">
+
+
+                <!-- ===============================
+                     RAMO
+                ================================= -->
+
+                <div class="bouquet">
+
+
+                    <!-- TALLOS TRASEROS -->
+
+                    <div class="stem stem-1"></div>
+                    <div class="stem stem-2"></div>
+                    <div class="stem stem-3"></div>
+                    <div class="stem stem-4"></div>
+                    <div class="stem stem-5"></div>
+                    <div class="stem stem-6"></div>
+                    <div class="stem stem-7"></div>
+
+
+                    <!-- HOJAS -->
+
+                    <div class="leaf leaf-1"></div>
+                    <div class="leaf leaf-2"></div>
+                    <div class="leaf leaf-3"></div>
+                    <div class="leaf leaf-4"></div>
+                    <div class="leaf leaf-5"></div>
+                    <div class="leaf leaf-6"></div>
+                    <div class="leaf leaf-7"></div>
+                    <div class="leaf leaf-8"></div>
+
+
+                    <!-- ==========================
+                         ROSAS AMARILLAS
+                    =========================== -->
+
+                    <div class="flower rose r1">
+                        <span></span>
+                    </div>
+
+                    <div class="flower rose r2">
+                        <span></span>
+                    </div>
+
+                    <div class="flower rose r3">
+                        <span></span>
+                    </div>
+
+
+                    <!-- ==========================
+                         PEONÍAS
+                    =========================== -->
+
+                    <div class="flower peony p1">
+                        <span></span>
+                    </div>
+
+                    <div class="flower peony p2">
+                        <span></span>
+                    </div>
+
+
+                    <!-- ==========================
+                         GIRASOLES
+                    =========================== -->
+
+                    <div class="sunflower s1">
+
+                        <div class="sun-petals"></div>
+
+                        <div class="sun-center"></div>
+
+                    </div>
+
+
+                    <div class="sunflower s2">
+
+                        <div class="sun-petals"></div>
+
+                        <div class="sun-center"></div>
+
+                    </div>
+
+
+                    <!-- ==========================
+                         LIRIO
+                    =========================== -->
+
+                    <div class="bouquet-lily">
+
+                        <svg viewBox="0 0 180 220">
+
+                            <path
+                                d="M90 100 C85 145 90 185 90 220"
+                                stroke="#4f7e2d"
+                                stroke-width="7"
+                                fill="none"/>
+
+                            <path
+                                d="M90 160 C55 140 34 148 22 170 C55 177 76 173 90 160Z"
+                                fill="#689438"/>
+
+                            <path
+                                d="M90 105
+                                   C58 83 47 55 60 22
+                                   C80 28 87 52 90 75
+                                   C93 52 100 28 120 22
+                                   C133 55 122 83 90 105Z"
+                                fill="#ffd52c"/>
+
+                            <path
+                                d="M90 102
+                                   C66 94 48 77 48 55
+                                   C70 53 84 66 90 84Z"
+                                fill="#ffe66e"/>
+
+                            <path
+                                d="M90 102
+                                   C114 94 132 77 132 55
+                                   C110 53 96 66 90 84Z"
+                                fill="#ffe66e"/>
+
+                            <circle
+                                cx="90"
+                                cy="99"
+                                r="8"
+                                fill="#d79b16"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <!-- ==========================
+                         RAMITAS PEQUEÑAS
+                    =========================== -->
+
+                    <div class="tiny-flower tf1">✦</div>
+                    <div class="tiny-flower tf2">✦</div>
+                    <div class="tiny-flower tf3">✦</div>
+                    <div class="tiny-flower tf4">✦</div>
+
+
+                    <!-- ==========================
+                         FLORERO DE CRISTAL
+                    =========================== -->
+
+                    <div class="glass-vase">
+
+                        <div class="water"></div>
+
+                        <div class="glass-highlight"></div>
+
+                        <div class="glass-reflection"></div>
+
+                        <div class="vase-rim"></div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="falling-stem"></div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- FLORERO -->
-    <section class="bouquet-section">
+        <!-- ================================================
+             MENSAJE FINAL
+        ================================================= -->
 
-        <div class="bouquet">
+        <section class="final-message">
 
-            <!-- Flores -->
-            <div class="flower flower-1">🌼</div>
-            <div class="flower flower-2">🌻</div>
-            <div class="flower flower-3">🌼</div>
-            <div class="flower flower-4">🌷</div>
-            <div class="flower flower-5">🌼</div>
-            <div class="flower flower-6">🌻</div>
-            <div class="flower flower-7">🌼</div>
+            <div>
 
-            <!-- Hojas -->
-            <div class="leaf leaf-1"></div>
-            <div class="leaf leaf-2"></div>
-            <div class="leaf leaf-3"></div>
-            <div class="leaf leaf-4"></div>
+                <h2>
+                    Para ti
+                </h2>
 
-            <!-- Florero -->
-            <div class="vase">
-
-                <div class="vase-opening"></div>
-
-                <div class="vase-body"></div>
+                <p>
+                    Porque las flores que duran una temporada,
+                    pero mis sentimientos por ti los quiero conservar
+                    para siempre.
+                </p>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+    </main>
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
