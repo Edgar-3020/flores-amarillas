@@ -682,9 +682,10 @@ body {
 
 
 .branch-1 {
-    left: 50px;
-    bottom: 205px;
-    transform: rotate(-30deg);
+    left: 135px;
+    bottom: 250px;
+    height: 190px;
+    transform: rotate(-20deg);
 }
 
 .branch-2 {
