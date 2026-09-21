@@ -13,6 +13,76 @@ const bouquetSection =
 
 
 /* ==========================================================
+   VARIABLES RESPONSIVE
+========================================================== */
+
+function getResponsiveValues() {
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    /*
+       El punto final del lirio cambia según
+       el dispositivo.
+
+       En móvil necesitamos que termine
+       un poco más arriba porque el florero
+       ocupa proporcionalmente más espacio.
+    */
+
+    let endTop;
+
+    if (width <= 390) {
+
+        endTop = 54;
+
+    } else if (width <= 600) {
+
+        endTop = 57;
+
+    } else if (width <= 900) {
+
+        endTop = 59;
+
+    } else {
+
+        endTop = 61;
+
+    }
+
+
+    /*
+       Movimiento lateral más pequeño
+       en teléfonos.
+    */
+
+    let sideMovement;
+
+    if (width <= 600) {
+
+        sideMovement = 22;
+
+    } else if (width <= 900) {
+
+        sideMovement = 32;
+
+    } else {
+
+        sideMovement = 45;
+
+    }
+
+
+    return {
+        width,
+        height,
+        endTop,
+        sideMovement
+    };
+}
+
+
+/* ==========================================================
    FUNCIÓN PRINCIPAL
 ========================================================== */
 
@@ -24,25 +94,29 @@ function updatePage() {
     const viewportHeight =
         window.innerHeight;
 
+    const {
+        endTop,
+        sideMovement
+    } =
+        getResponsiveValues();
+
 
     /* ======================================================
-       01. OCULTAR LIRIO ORIGINAL
+       01. LIRIO ORIGINAL
     ====================================================== */
-
-    /*
-       El lirio inicial desaparece poco a poco
-       cuando comienza el scroll.
-    */
 
     const introProgress =
         Math.min(
-            scrollY / (viewportHeight * 0.65),
+            scrollY /
+            (viewportHeight * 0.65),
             1
         );
 
 
     introLily.style.opacity =
-        String(1 - introProgress);
+        String(
+            1 - introProgress
+        );
 
 
     introLily.style.transform =
@@ -53,16 +127,30 @@ function updatePage() {
         `;
 
 
-
     /* ======================================================
-       02. APARECE EL LIRIO QUE CAE
+       02. CAÍDA
     ====================================================== */
 
     const fallStart =
         viewportHeight * 0.45;
 
+    /*
+       En pantallas pequeñas hacemos
+       que la animación termine un poco
+       antes para sincronizarla con el ramo.
+    */
+
+    const fallDistance =
+        viewportHeight *
+        (
+            window.innerWidth <= 600
+                ? 1.45
+                : 1.60
+        );
+
     const fallEnd =
-        viewportHeight * 2.05;
+        fallStart +
+        fallDistance;
 
 
     let fallProgress =
@@ -84,9 +172,9 @@ function updatePage() {
         );
 
 
-    /*
-       Aparecer
-    */
+    /* ======================================================
+       03. APARICIÓN
+    ====================================================== */
 
     fallingLily.style.opacity =
         String(
@@ -97,20 +185,10 @@ function updatePage() {
 
 
     /* ======================================================
-       03. CAÍDA
+       04. POSICIÓN VERTICAL
     ====================================================== */
 
-    /*
-       Empieza arriba de la pantalla.
-
-       Termina aproximadamente
-       en la boca del florero.
-    */
-
-    const startTop = 8;
-
-    const endTop = 61;
-
+    const startTop = 7;
 
     const currentTop =
         startTop +
@@ -126,24 +204,20 @@ function updatePage() {
 
 
     /* ======================================================
-       04. MOVIMIENTO LATERAL
+       05. MOVIMIENTO LATERAL
     ====================================================== */
 
-    /*
-       Hace que la flor no caiga
-       perfectamente recta.
-    */
-
-    const sideMovement =
+    const currentSideMovement =
         Math.sin(
             fallProgress *
             Math.PI *
             3
-        ) * 45;
+        ) *
+        sideMovement;
 
 
     /* ======================================================
-       05. ROTACIÓN
+       06. ROTACIÓN
     ====================================================== */
 
     const rotation =
@@ -151,11 +225,16 @@ function updatePage() {
             fallProgress *
             Math.PI *
             4
-        ) * 12;
+        ) *
+        (
+            window.innerWidth <= 600
+                ? 9
+                : 12
+        );
 
 
     /* ======================================================
-       06. ESCALA
+       07. ESCALA
     ====================================================== */
 
     const scale =
@@ -169,45 +248,39 @@ function updatePage() {
     fallingLily.style.transform =
         `
         translateX(
-            calc(-50% + ${sideMovement}px)
+            calc(
+                -50% +
+                ${currentSideMovement}px
+            )
         )
         rotate(${rotation}deg)
         scale(${scale})
         `;
 
 
-
     /* ======================================================
-       07. CUANDO LLEGA AL FLORERO
+       08. ENTRADA AL FLORERO
     ====================================================== */
-
-    /*
-       Durante el último tramo hacemos que
-       el lirio se vuelva ligeramente transparente.
-
-       La sensación será que entra dentro
-       del ramo.
-    */
 
     if (fallProgress > 0.86) {
 
         const finalProgress =
             (
                 fallProgress - 0.86
-            ) / 0.14;
+            ) /
+            0.14;
 
 
         fallingLily.style.opacity =
             String(
-                1 - finalProgress
+                1 -
+                finalProgress
             );
-
     }
 
 
-
     /* ======================================================
-       08. CAMBIO DE COLOR DEL FONDO
+       09. COLOR DEL FONDO
     ====================================================== */
 
     const colorStart =
@@ -236,14 +309,6 @@ function updatePage() {
         );
 
 
-    /*
-       Blanco
-          ↓
-       Crema
-          ↓
-       Amarillo
-    */
-
     const red = 255;
 
     const green =
@@ -260,8 +325,11 @@ function updatePage() {
 
 
     document.body.style.backgroundColor =
-        `rgb(${red}, ${green}, ${blue})`;
-
+        `rgb(
+            ${red},
+            ${green},
+            ${blue}
+        )`;
 }
 
 
@@ -285,6 +353,23 @@ window.addEventListener(
 window.addEventListener(
     "resize",
     updatePage
+);
+
+
+/* ==========================================================
+   ORIENTACIÓN
+========================================================== */
+
+window.addEventListener(
+    "orientationchange",
+    () => {
+
+        setTimeout(
+            updatePage,
+            100
+        );
+
+    }
 );
 
 
